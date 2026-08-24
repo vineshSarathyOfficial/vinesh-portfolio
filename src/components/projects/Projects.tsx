@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { ArrowRight, Eye, ExternalLink, CheckCircle2 } from "lucide-react";
+import { ArrowRight, Eye, ExternalLink, CheckCircle2, Sparkles } from "lucide-react";
 import { Github } from "@/components/ui/Icons";
 import { featuredProjects } from "@/data/portfolio";
 import { Tilt } from "../ui/Tilt";
@@ -22,7 +22,7 @@ export function Projects() {
               Selected Projects
             </h2>
             <p className="font-sans text-body text-base max-w-xl">
-              A showcase of production-grade engineering, full-stack architectures, and automated ingestion pipelines.
+              A showcase of production-grade engineering, full-stack architectures, and AI conversational copilot integrations.
             </p>
           </div>
         </Reveal>
@@ -46,8 +46,8 @@ export function Projects() {
                       </div>
 
                       {/* Title & Description */}
-                      <h3 className="font-sans font-semibold text-xl md:text-2xl text-ink tracking-tight mb-3">
-                        {project.title}
+                      <h3 className="font-sans font-semibold text-xl md:text-2xl text-ink tracking-tight mb-3 flex items-center gap-2">
+                        <span>{project.title}</span>
                       </h3>
                       <p className="font-sans text-body text-sm md:text-base leading-relaxed mb-6">
                         {project.description}
@@ -134,6 +134,13 @@ export function Projects() {
                         Execution Layer Status
                       </div>
                       <div className="bg-canvas-elevated border border-hairline p-3.5 rounded-sm space-y-2.5 font-mono text-xs">
+                        <div className="flex justify-between items-center">
+                          <span className="text-mute flex items-center gap-1">
+                            <Sparkles size={11} className="text-link" />
+                            AI Copilot
+                          </span>
+                          <span className="text-emerald-500 font-medium">Gemini 2.5 Flash</span>
+                        </div>
                         <div className="flex justify-between items-center">
                           <span className="text-mute">Database Layer</span>
                           <span className="text-emerald-500 font-medium">PostgreSQL (Neon)</span>

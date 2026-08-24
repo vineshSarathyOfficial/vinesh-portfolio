@@ -60,27 +60,28 @@ export const featuredProjects: Project[] = [
     id: "ai-finance-manager",
     title: "FinPulse — AI Finance & Wealth Manager",
     status: "Shipped",
-    description: "A full-stack wealth and expense management platform featuring automated Gmail bank alert ingestion, bank statement PDF/CSV parsing with duplicate detection, statistical recurring subscription detection, and deep analytics.",
+    description: "A full-stack wealth and expense management platform featuring conversational AI financial copilot (powered by Gemini), automated Gmail bank alert ingestion, bank statement PDF/CSV parsing with duplicate detection, statistical subscription detection, and deep analytics.",
     technologies: [
       "Next.js 16",
       "React 19",
       "TypeScript",
       "Tailwind CSS v4",
-      "PostgreSQL",
+      "Google Gemini 2.5 Flash",
+      "PostgreSQL (Neon)",
       "Prisma ORM",
       "Google OAuth / Gmail API",
       "Recharts",
       "Auth.js v5",
     ],
     capabilities: [
-      "Automated Gmail transaction sync with bank alert parser",
+      "Conversational AI Financial Copilot (natural-language wealth & expense queries)",
+      "Automated AI Financial Health Briefing (Wins, Spikes, and Smart Actions)",
+      "Automated Gmail transaction sync with bank alert parser (HDFC, ICICI, SBI, Axis, UPI)",
       "Bank statement PDF & CSV ingestion with duplicate detection",
-      "Statistical recurring subscription detection engine",
-      "Deep financial analytics with weekday spend heatmap",
-      "Cumulative net worth & savings curve visualization",
+      "Statistical recurring subscription & bill detection engine",
+      "Deep financial analytics with weekday spend heatmap & net savings curve",
       "Customizable sync time ranges (Current Month, 7d, 30d, 90d, 180d)",
-      "Expense & income tracking with category management",
-      "Data sovereignty with one-click CSV export",
+      "Data sovereignty with one-click CSV export & danger zone reset",
       "Secure Edge-compatible JWT authentication & row-level security",
     ],
     caseStudyUrl: "/projects/ai-finance-manager",
@@ -184,6 +185,16 @@ export const skillCategories: SkillCategory[] = [
     skills: ["PostgreSQL (Neon)", "MySQL", "Prisma ORM"],
   },
   {
+    category: "AI & GenAI Integration",
+    skills: [
+      "Google Gemini API (2.5 Flash)",
+      "LLM Prompt Engineering",
+      "Context Window Structuring",
+      "Conversational Copilot Architectures",
+      "Automated Ingestion & Classification",
+    ],
+  },
+  {
     category: "Testing & Tooling",
     skills: ["Jest", "Storybook", "Git", "CI/CD Pipelines", "Vercel", "Turbopack", "Webpack", "Vite"],
   },
@@ -204,16 +215,6 @@ export const skillCategories: SkillCategory[] = [
   {
     category: "Additional Frameworks",
     skills: ["Vue.js", "Laravel", ".NET Framework"],
-  },
-  {
-    category: "AI & Automation",
-    skills: [
-      "LLM APIs & Integration",
-      "AI Application Architecture",
-      "Automated Ingestion Pipelines",
-      "Prompt Engineering",
-      "Heuristic & Statistical Classification",
-    ],
   },
 ];
 
@@ -238,6 +239,6 @@ export const philosophies: Philosophy[] = [
 
 export const currentFocus = {
   learning: ["Data Structures & Algorithms", "System Design"],
-  building: ["FinPulse (Production Ready)"],
-  exploring: ["Full-Stack Next.js Architecture", "AI Automation Pipelines"],
+  building: ["FinPulse (AI Copilot & Gmail Sync Live)"],
+  exploring: ["Conversational GenAI Architectures", "Full-Stack Next.js 16"],
 };

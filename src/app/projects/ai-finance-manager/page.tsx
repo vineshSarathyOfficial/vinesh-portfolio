@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { ArrowLeft, ExternalLink, CheckCircle2, ShieldCheck, Mail, FileSpreadsheet, RotateCcw, BarChart3, Activity } from "lucide-react";
+import { ArrowLeft, ExternalLink, CheckCircle2, ShieldCheck, Mail, FileSpreadsheet, RotateCcw, BarChart3, Activity, Sparkles, Bot } from "lucide-react";
 import { Github } from "@/components/ui/Icons";
 import { Reveal } from "@/components/ui/Reveal";
 
@@ -11,6 +11,7 @@ const techStack = [
   "React 19",
   "TypeScript",
   "Tailwind CSS v4",
+  "Google Gemini 2.5 Flash",
   "Prisma ORM",
   "Neon PostgreSQL",
   "Google OAuth 2.0",
@@ -20,6 +21,12 @@ const techStack = [
 ];
 
 const architectureNodes = [
+  {
+    icon: Sparkles,
+    title: "Conversational AI Copilot (Gemini)",
+    desc: "Sub-second natural language financial advisor providing real-time answers on category spend, subscription audits, and personalized savings strategies.",
+    status: "Implemented",
+  },
   {
     icon: Mail,
     title: "Gmail Transaction Ingestion",
@@ -42,6 +49,12 @@ const architectureNodes = [
     icon: BarChart3,
     title: "Deep Financial Analytics",
     desc: "Interactive Recharts visualizer for 6-month trends, weekday spending heatmap, cumulative savings curve, and top merchants.",
+    status: "Implemented",
+  },
+  {
+    icon: Bot,
+    title: "Dashboard AI Health Briefing",
+    desc: "Automated 3-point briefing engine generating executive summaries on financial wins, spending spikes, and actionable next steps.",
     status: "Implemented",
   },
 ];
@@ -69,7 +82,7 @@ export default function FinPulseCaseStudyPage() {
                 <CheckCircle2 size={12} className="text-emerald-500" />
                 Production Live &amp; Deployed
               </span>
-              <span className="text-xs text-mute font-mono">Full-Stack FinTech Application</span>
+              <span className="text-xs text-mute font-mono">Full-Stack FinTech &amp; GenAI Application</span>
             </div>
 
             <h1 className="font-sans font-bold text-3xl md:text-5xl text-ink tracking-tight">
@@ -77,7 +90,7 @@ export default function FinPulseCaseStudyPage() {
             </h1>
 
             <p className="font-sans text-body text-base md:text-lg leading-relaxed max-w-3xl">
-              An intelligent wealth and expense management system designed to eliminate manual data entry via automated Gmail bank alert syncing, bank statement ingestion, statistical subscription detection, and deep analytics.
+              An intelligent wealth and expense management system featuring a conversational Gemini AI Copilot, automated Gmail bank alert ingestion, statement PDF/CSV parsing, statistical subscription detection, and deep analytics.
             </p>
 
             {/* Quick Action Links */}
@@ -159,20 +172,20 @@ export default function FinPulseCaseStudyPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-body leading-relaxed">
             <div className="space-y-2 p-5 rounded-md border border-hairline bg-canvas-elevated">
               <h3 className="font-sans font-semibold text-ink flex items-center gap-2">
+                <Sparkles size={16} className="text-link" />
+                Conversational Financial GenAI
+              </h3>
+              <p className="text-xs">
+                Integrates Google Gemini 2.5 Flash with live token-efficient context injection, allowing users to query expenses, audit subscriptions, and discover savings opportunities in conversational plain English.
+              </p>
+            </div>
+            <div className="space-y-2 p-5 rounded-md border border-hairline bg-canvas-elevated">
+              <h3 className="font-sans font-semibold text-ink flex items-center gap-2">
                 <ShieldCheck size={16} className="text-emerald-500" />
                 Data Privacy &amp; Row-Level Security
               </h3>
               <p className="text-xs">
                 Tokens are stored in PostgreSQL with strict user-level multi-tenancy. Gmail queries use read-only scopes limited strictly to financial sender domains, ensuring no personal emails are touched.
-              </p>
-            </div>
-            <div className="space-y-2 p-5 rounded-md border border-hairline bg-canvas-elevated">
-              <h3 className="font-sans font-semibold text-ink flex items-center gap-2">
-                <Activity size={16} className="text-link" />
-                Edge-Compatible Next.js Architecture
-              </h3>
-              <p className="text-xs">
-                Middleware runs on the Edge runtime without bundling heavy database drivers, ensuring lightning-fast sub-200ms page transitions across global CDN nodes.
               </p>
             </div>
           </div>
