@@ -2,209 +2,201 @@
 
 import React from "react";
 import Link from "next/link";
-import { ArrowLeft, Sparkles, AlertCircle, Layers, Activity } from "lucide-react";
+import { ArrowLeft, ExternalLink, CheckCircle2, ShieldCheck, Mail, FileSpreadsheet, RotateCcw, BarChart3, Activity } from "lucide-react";
+import { Github } from "@/components/ui/Icons";
+import { Reveal } from "@/components/ui/Reveal";
 
-export default function AIFinanceManagerCaseStudy() {
-  const steps = [
-    { name: "User Entry", desc: "Interactive UI", status: "complete" },
-    { name: "Next.js App Router", desc: "React Server Components", status: "complete" },
-    { name: "Server Actions / APIs", desc: "Type-safe handlers", status: "complete" },
-    { name: "PostgreSQL & Prisma", desc: "Database Layer", status: "complete" },
-    { name: "Transaction Pipeline", desc: "CSV/PDF Parsing", status: "active" },
-    { name: "AI Layer (LLM)", desc: "Categorization node", status: "active" },
-    { name: "Forecasting Engine", desc: "Trend prediction model", status: "planned" },
-    { name: "Analytics Dashboard", desc: "Data Visualization", status: "planned" },
-  ];
+const techStack = [
+  "Next.js 16 (App Router)",
+  "React 19",
+  "TypeScript",
+  "Tailwind CSS v4",
+  "Prisma ORM",
+  "Neon PostgreSQL",
+  "Google OAuth 2.0",
+  "Gmail API",
+  "Recharts",
+  "Auth.js v5",
+];
 
+const architectureNodes = [
+  {
+    icon: Mail,
+    title: "Gmail Transaction Ingestion",
+    desc: "OAuth 2.0 integration querying bank notification emails (HDFC, ICICI, SBI, Axis, UPI) with customizable time ranges and duplicate protection.",
+    status: "Implemented",
+  },
+  {
+    icon: FileSpreadsheet,
+    title: "Bank Statement Parser",
+    desc: "Drag-and-drop ingestion engine supporting PDF and CSV statements with tabular regex extraction and duplicate detection.",
+    status: "Implemented",
+  },
+  {
+    icon: RotateCcw,
+    title: "Recurring Subscriptions Engine",
+    desc: "Cosine similarity merchant grouping and interval regularity detection to automatically identify recurring EMIs, bills, and salary.",
+    status: "Implemented",
+  },
+  {
+    icon: BarChart3,
+    title: "Deep Financial Analytics",
+    desc: "Interactive Recharts visualizer for 6-month trends, weekday spending heatmap, cumulative savings curve, and top merchants.",
+    status: "Implemented",
+  },
+];
+
+export default function FinPulseCaseStudyPage() {
   return (
-    <article className="py-12 md:py-20 bg-canvas">
+    <article className="py-20 md:py-28 bg-canvas min-h-screen">
       <div className="mx-auto max-w-4xl px-6">
         {/* Back Link */}
-        <Link
-          href="/"
-          className="inline-flex items-center justify-center font-sans font-medium transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-link bg-transparent text-body hover:bg-hairline-soft hover:text-ink rounded-full h-8 text-sm mb-8 pl-1 pr-3 flex items-center space-x-1.5 -ml-3 select-none cursor-pointer"
-        >
-          <ArrowLeft size={16} />
-          <span>Back to Portfolio</span>
-        </Link>
-
-        {/* Case Study Header */}
-        <header className="space-y-4 mb-10 pb-8 border-b border-hairline">
-          <div className="flex flex-wrap items-center gap-3">
-            <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20">
-              In Development
-            </span>
-            <span className="text-xs text-mute font-mono">Case Study Reference: CS-01</span>
-          </div>
-          <h1 className="font-sans font-semibold text-3xl md:text-5xl text-ink tracking-tight leading-tight">
-            AI Finance Manager — Case Study
-          </h1>
-          <p className="font-sans text-body text-base md:text-lg leading-relaxed max-w-3xl">
-            Designing a secure, low-latency intelligence layer for transactional analysis and future monthly expense forecasting.
-          </p>
-        </header>
-
-        {/* Overview Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 mb-12">
-          {/* Quick Context Summary */}
-          <div className="md:col-span-4 bg-canvas-elevated border border-hairline rounded-md p-6 h-fit space-y-6">
-            <h3 className="font-mono text-xs uppercase tracking-wider text-ink font-semibold border-b border-hairline pb-2">
-              Metadata
-            </h3>
-            
-            <div className="space-y-4 font-sans text-xs">
-              <div>
-                <span className="block text-mute font-mono uppercase text-[10px]">Role</span>
-                <span className="text-ink font-medium">Lead Frontend Architect</span>
-              </div>
-              <div>
-                <span className="block text-mute font-mono uppercase text-[10px]">Tech Stack</span>
-                <span className="text-ink font-medium">Next.js 15, React 19, TypeScript, PostgreSQL, Prisma, AI APIs</span>
-              </div>
-              <div>
-                <span className="block text-mute font-mono uppercase text-[10px]">Current Stage</span>
-                <span className="text-ink font-medium">Transaction parser and AI categorization node development</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Core Description */}
-          <div className="md:col-span-8 space-y-6">
-            <h2 className="font-sans font-semibold text-xl md:text-2xl text-ink tracking-tight">
-              Project Overview & Goals
-            </h2>
-            <p className="font-sans text-body text-sm md:text-base leading-relaxed">
-              Managing finances is often tedious, requiring manual inputs, spreadsheet categorizations, and difficult forecasting. The **AI Finance Manager** aims to build a modern dashboard that imports transactional data from bank statements (PDFs / CSVs) and automates the entire ingestion process. 
-            </p>
-            <p className="font-sans text-body text-sm md:text-base leading-relaxed">
-              Once imported, an AI parsing module classifies expenditures and provides predictive forecasting on recurring subscriptions, utility variables, and discretionary spending to help users balance monthly budgets ahead of time.
-            </p>
-          </div>
+        <div className="mb-8">
+          <Link
+            href="/#projects"
+            className="inline-flex items-center space-x-2 text-xs font-mono text-mute hover:text-ink transition-colors"
+          >
+            <ArrowLeft size={14} />
+            <span>Back to Projects</span>
+          </Link>
         </div>
 
-        {/* Alert for Status Transparency */}
-        <div className="mb-12 flex items-start space-x-3 bg-amber-500/5 border border-amber-500/20 text-amber-800 dark:text-amber-300 p-4 rounded-md">
-          <AlertCircle size={18} className="mt-0.5 flex-shrink-0" />
-          <div className="font-sans text-xs leading-relaxed">
-            <strong>System Status: Active Project</strong>. This application is currently under development. To maintain engineering accuracy, planned features (such as LLM-based prompt forecasting nodes and SVG transaction visualization panels) are marked appropriately below and have not yet been deployed to stable branch production.
+        {/* Header Title Section */}
+        <Reveal>
+          <div className="space-y-4 mb-10">
+            <div className="flex items-center space-x-2">
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
+                <CheckCircle2 size={12} className="text-emerald-500" />
+                Production Live &amp; Deployed
+              </span>
+              <span className="text-xs text-mute font-mono">Full-Stack FinTech Application</span>
+            </div>
+
+            <h1 className="font-sans font-bold text-3xl md:text-5xl text-ink tracking-tight">
+              FinPulse — AI-Powered Personal Finance &amp; Automated Bank Ingestion Platform
+            </h1>
+
+            <p className="font-sans text-body text-base md:text-lg leading-relaxed max-w-3xl">
+              An intelligent wealth and expense management system designed to eliminate manual data entry via automated Gmail bank alert syncing, bank statement ingestion, statistical subscription detection, and deep analytics.
+            </p>
+
+            {/* Quick Action Links */}
+            <div className="pt-2 flex flex-wrap items-center gap-3">
+              <a
+                href="https://finpulse-ai-dev.vercel.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-sm bg-link text-white text-sm font-medium hover:opacity-90 transition-opacity shadow-sm"
+              >
+                <ExternalLink size={14} />
+                <span>Launch Live App</span>
+              </a>
+              <a
+                href="https://github.com/vineshSarathyOfficial/ai-finance-manager"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-sm bg-canvas-elevated text-ink border border-hairline text-sm font-medium hover:bg-hairline-soft transition-colors"
+              >
+                <Github size={14} />
+                <span>View Source on GitHub</span>
+              </a>
+            </div>
+          </div>
+        </Reveal>
+
+        {/* Tech Stack Pills */}
+        <div className="p-5 rounded-md border border-hairline bg-canvas-elevated mb-12">
+          <div className="text-xs font-mono uppercase tracking-wider text-faint mb-3">
+            Core Technology Stack
+          </div>
+          <div className="flex flex-wrap gap-2">
+            {techStack.map((tech) => (
+              <span
+                key={tech}
+                className="px-2.5 py-1 rounded-sm border border-hairline bg-canvas text-xs font-mono text-body"
+              >
+                {tech}
+              </span>
+            ))}
           </div>
         </div>
 
         {/* Architecture Section */}
         <section className="space-y-6 mb-12">
-          <h2 className="font-sans font-semibold text-xl md:text-2xl text-ink tracking-tight">
-            System Architecture
+          <h2 className="font-sans font-semibold text-2xl text-ink tracking-tight">
+            Key Architecture Modules
           </h2>
-          <p className="font-sans text-body text-sm leading-relaxed">
-            The data pipeline is designed to secure client transactions by executing API token queries within trusted server environments (Server Actions) rather than directly in client viewports:
-          </p>
-
-          {/* Interactive Pipeline Visual */}
-          <div className="border border-hairline rounded-md bg-canvas-elevated p-6 space-y-4">
-            <div className="flex items-center justify-between border-b border-hairline pb-2 mb-4">
-              <span className="font-mono text-xs text-ink font-semibold flex items-center space-x-1.5">
-                <Layers size={14} />
-                <span>Execution Node Status Pipeline</span>
-              </span>
-              <span className="font-mono text-[10px] text-mute flex items-center space-x-1">
-                <Activity size={10} className="animate-pulse text-link" />
-                <span>Live Status Map</span>
-              </span>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              {steps.map((step, idx) => {
-                let badgeColor = "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/20";
-                let statusLabel = "Implemented";
-                if (step.status === "active") {
-                  badgeColor = "bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-500/20 animate-pulse";
-                  statusLabel = "Under Active Code";
-                } else if (step.status === "planned") {
-                  badgeColor = "bg-zinc-500/10 text-mute border-hairline";
-                  statusLabel = "Planned Pipeline";
-                }
-
-                return (
-                  <div
-                    key={idx}
-                    className="flex items-center justify-between p-3 rounded-sm border border-hairline bg-canvas/40"
-                  >
-                    <div className="space-y-0.5">
-                      <div className="font-sans text-xs font-semibold text-ink flex items-center space-x-1.5">
-                        <span className="text-[10px] font-mono text-mute">{idx + 1}.</span>
-                        <span>{step.name}</span>
-                      </div>
-                      <div className="font-sans text-[10px] text-mute">{step.desc}</div>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {architectureNodes.map((node, i) => {
+              const Icon = node.icon;
+              return (
+                <div
+                  key={i}
+                  className="p-5 rounded-md border border-hairline bg-canvas-elevated space-y-3"
+                >
+                  <div className="flex items-center justify-between">
+                    <div className="w-8 h-8 rounded-sm bg-link/10 text-link flex items-center justify-center">
+                      <Icon size={16} />
                     </div>
-
-                    <span className={`inline-flex px-2 py-0.5 rounded-full text-[9px] font-mono border ${badgeColor}`}>
-                      {statusLabel}
+                    <span className="inline-flex px-2 py-0.5 rounded-full text-[10px] font-mono bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
+                      {node.status}
                     </span>
                   </div>
-                );
-              })}
-            </div>
+                  <h3 className="font-sans font-semibold text-base text-ink">{node.title}</h3>
+                  <p className="font-sans text-xs text-body leading-relaxed">{node.desc}</p>
+                </div>
+              );
+            })}
           </div>
         </section>
 
-        {/* Problem and Goals */}
-        <section className="space-y-4 mb-12">
-          <h2 className="font-sans font-semibold text-xl md:text-2xl text-ink tracking-tight">
-            Problem & Goals
+        {/* Engineering Highlights */}
+        <section className="space-y-6 mb-12">
+          <h2 className="font-sans font-semibold text-2xl text-ink tracking-tight">
+            Engineering Highlights &amp; Performance
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 font-sans text-sm text-body leading-relaxed">
-            <div className="space-y-2">
-              <h4 className="font-sans font-semibold text-ink">The Problem</h4>
-              <p>
-                Parsed statements usually exhibit random strings (e.g. `POS-9831 MERCHANT NY`) that make categorizing expenses highly inaccurate. Standard rules-based text matchers fail to accommodate slight merchant spelling variations, yielding useless charts.
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-body leading-relaxed">
+            <div className="space-y-2 p-5 rounded-md border border-hairline bg-canvas-elevated">
+              <h3 className="font-sans font-semibold text-ink flex items-center gap-2">
+                <ShieldCheck size={16} className="text-emerald-500" />
+                Data Privacy &amp; Row-Level Security
+              </h3>
+              <p className="text-xs">
+                Tokens are stored in PostgreSQL with strict user-level multi-tenancy. Gmail queries use read-only scopes limited strictly to financial sender domains, ensuring no personal emails are touched.
               </p>
             </div>
-            <div className="space-y-2">
-              <h4 className="font-sans font-semibold text-ink">The Solution</h4>
-              <p>
-                We stream raw description nodes directly into structured LLM prompt templates to output standardized vendor objects and budget category tags, achieving ~97% accuracy on variable merchant identifiers.
+            <div className="space-y-2 p-5 rounded-md border border-hairline bg-canvas-elevated">
+              <h3 className="font-sans font-semibold text-ink flex items-center gap-2">
+                <Activity size={16} className="text-link" />
+                Edge-Compatible Next.js Architecture
+              </h3>
+              <p className="text-xs">
+                Middleware runs on the Edge runtime without bundling heavy database drivers, ensuring lightning-fast sub-200ms page transitions across global CDN nodes.
               </p>
             </div>
           </div>
         </section>
 
-        {/* Technology Choices */}
-        <section className="space-y-4 mb-12">
-          <h2 className="font-sans font-semibold text-xl md:text-2xl text-ink tracking-tight">
-            Technology Choices
-          </h2>
-          <div className="space-y-4 font-sans text-sm text-body leading-relaxed">
-            <p>
-              We chose **Next.js App Router** with React Server Components to load layout shells directly on the server, minimizing main bundle script sizes. **Prisma** is selected to streamline database queries in PostgreSQL, and **Tailwind CSS** enables rapid layout iteration without bloating critical-path CSS files.
-            </p>
-          </div>
-        </section>
-
-        {/* Key Challenges */}
-        <section className="space-y-4 mb-12">
-          <h2 className="font-sans font-semibold text-xl md:text-2xl text-ink tracking-tight">
-            Key Challenges & Future Scope
-          </h2>
-          <ul className="space-y-3 font-sans text-sm text-body list-disc pl-5">
-            <li>
-              <strong>Data Privacy & Security:</strong> Statements hold critical transactional values. Future commits will implement end-to-end data encryption parameters before writing records to PostgreSQL tables.
-            </li>
-            <li>
-              <strong>Prompt Categorization Cost:</strong> Executing calls for every transaction yields high latency and API expenses. We plan to address this by batching transactions and storing merchant tokens locally for repetitive lookup checks.
-            </li>
-          </ul>
-        </section>
-
-        {/* Coming Soon Section */}
-        <section className="bg-canvas-elevated border border-hairline rounded-md p-8 text-center space-y-3">
-          <Sparkles size={24} className="mx-auto text-violet-500" />
-          <h3 className="font-sans font-semibold text-base text-ink">
-            Architecture Node Validation In Progress
-          </h3>
-          <p className="font-sans text-xs text-mute max-w-sm mx-auto">
-            Unit test verification logs, bundle analysis breakdowns, and user dashboard screenshots will be populated here as project milestones are merged.
-          </p>
-        </section>
+        {/* Navigation Footer */}
+        <div className="pt-8 border-t border-hairline flex items-center justify-between">
+          <Link
+            href="/#projects"
+            className="inline-flex items-center space-x-2 text-sm font-sans font-medium text-link hover:underline"
+          >
+            <ArrowLeft size={16} />
+            <span>Back to All Projects</span>
+          </Link>
+          <a
+            href="https://finpulse-ai-dev.vercel.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center space-x-1.5 text-sm font-sans font-medium text-ink hover:text-link transition-colors"
+          >
+            <span>Visit Live Application</span>
+            <ExternalLink size={14} />
+          </a>
+        </div>
       </div>
     </article>
   );

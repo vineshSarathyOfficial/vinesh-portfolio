@@ -1,11 +1,13 @@
 export interface Project {
   id: string;
   title: string;
-  status: "In Progress" | "Completed";
+  status: "In Progress" | "Completed" | "Shipped";
   description: string;
   technologies: string[];
   capabilities: string[];
   caseStudyUrl: string;
+  liveUrl?: string;
+  githubUrl?: string;
 }
 
 export interface Experience {
@@ -56,31 +58,34 @@ export const profile: Profile = {
 export const featuredProjects: Project[] = [
   {
     id: "ai-finance-manager",
-    title: "AI Finance Manager",
-    status: "In Progress",
-    description: "An AI-powered personal finance platform designed to analyze financial data, categorize transactions, understand spending patterns, and forecast future monthly expenses.",
+    title: "FinPulse — AI Finance & Wealth Manager",
+    status: "Shipped",
+    description: "A full-stack wealth and expense management platform featuring automated Gmail bank alert ingestion, bank statement PDF/CSV parsing with duplicate detection, statistical recurring subscription detection, and deep analytics.",
     technologies: [
-      "Next.js",
-      "React",
+      "Next.js 16",
+      "React 19",
       "TypeScript",
+      "Tailwind CSS v4",
       "PostgreSQL",
-      "Prisma",
-      "AI APIs",
-      "Data visualization",
+      "Prisma ORM",
+      "Google OAuth / Gmail API",
+      "Recharts",
+      "Auth.js v5",
     ],
     capabilities: [
-      "Expense and income tracking",
-      "Bank statement / financial data upload",
-      "CSV and PDF transaction extraction",
-      "Automatic transaction categorization",
-      "Spending analytics",
-      "Monthly spending prediction",
-      "AI financial insights",
-      "Natural-language finance assistant",
-      "Budget analysis",
-      "Future expense forecasting",
+      "Automated Gmail transaction sync with bank alert parser",
+      "Bank statement PDF & CSV ingestion with duplicate detection",
+      "Statistical recurring subscription detection engine",
+      "Deep financial analytics with weekday spend heatmap",
+      "Cumulative net worth & savings curve visualization",
+      "Customizable sync time ranges (Current Month, 7d, 30d, 90d, 180d)",
+      "Expense & income tracking with category management",
+      "Data sovereignty with one-click CSV export",
+      "Secure Edge-compatible JWT authentication & row-level security",
     ],
     caseStudyUrl: "/projects/ai-finance-manager",
+    liveUrl: "https://finpulse-ai-dev.vercel.app",
+    githubUrl: "https://github.com/vineshSarathyOfficial/ai-finance-manager",
   },
 ];
 
@@ -172,21 +177,22 @@ export const skillCategories: SkillCategory[] = [
   },
   {
     category: "Backend & APIs",
-    skills: ["Node.js", "Express.js", "GraphQL", "Prisma ORM", "RESTful APIs", "WebSockets"],
+    skills: ["Node.js", "Express.js", "GraphQL", "Prisma ORM", "RESTful APIs", "WebSockets", "Google APIs / OAuth 2.0"],
   },
   {
     category: "Databases",
-    skills: ["MySQL", "PostgreSQL"],
+    skills: ["PostgreSQL (Neon)", "MySQL", "Prisma ORM"],
   },
   {
     category: "Testing & Tooling",
-    skills: ["Jest", "Storybook", "Git", "CI/CD Pipelines", "Webpack", "Vite"],
+    skills: ["Jest", "Storybook", "Git", "CI/CD Pipelines", "Vercel", "Turbopack", "Webpack", "Vite"],
   },
   {
     category: "Architecture & Concepts",
     skills: [
-      "Frontend Architecture",
-      "SSR & SSG",
+      "Full-Stack Architecture",
+      "Server Components (RSC)",
+      "SSR & Edge Middleware",
       "Performance Optimization",
       "Scalable UI Systems",
       "Design Systems",
@@ -200,13 +206,13 @@ export const skillCategories: SkillCategory[] = [
     skills: ["Vue.js", "Laravel", ".NET Framework"],
   },
   {
-    category: "Exploring / Building With AI",
+    category: "AI & Automation",
     skills: [
-      "LLM APIs",
-      "AI application architecture",
-      "AI-powered features",
-      "Prompt engineering",
-      "AI-assisted data analysis",
+      "LLM APIs & Integration",
+      "AI Application Architecture",
+      "Automated Ingestion Pipelines",
+      "Prompt Engineering",
+      "Heuristic & Statistical Classification",
     ],
   },
 ];
@@ -232,6 +238,6 @@ export const philosophies: Philosophy[] = [
 
 export const currentFocus = {
   learning: ["Data Structures & Algorithms", "System Design"],
-  building: ["AI Finance Manager"],
-  exploring: ["AI-powered web applications"],
+  building: ["FinPulse (Production Ready)"],
+  exploring: ["Full-Stack Next.js Architecture", "AI Automation Pipelines"],
 };
