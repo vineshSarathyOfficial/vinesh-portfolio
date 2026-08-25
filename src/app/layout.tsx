@@ -42,7 +42,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${inter.variable} h-full antialiased dark`}>
-      <body className="relative min-h-full flex flex-col text-[#f5f5f7] selection:bg-[#a855f7]/35 selection:text-white">
+      <body className="relative min-h-full flex flex-col text-[#f5f5f7] selection:bg-[#10b981]/35 selection:text-white">
         <Navbar />
         <main className="relative z-[1] flex-1">{children}</main>
         <Footer />

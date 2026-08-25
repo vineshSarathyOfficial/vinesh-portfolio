@@ -99,8 +99,8 @@ export function CinematicScene({
         </Suspense>
       </Canvas>
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_35%,rgba(12,12,16,0.3)_100%)]" />
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_30%_40%,rgba(79,140,255,0.08)_0%,transparent_50%)]" />
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_70%_60%,rgba(168,85,247,0.06)_0%,transparent_45%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_30%_40%,rgba(14,165,233,0.08)_0%,transparent_50%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_70%_60%,rgba(20,184,166,0.06)_0%,transparent_45%)]" />
     </div>
   );
 }

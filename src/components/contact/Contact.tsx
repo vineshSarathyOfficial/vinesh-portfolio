@@ -41,7 +41,7 @@ export function Contact() {
       className="section-glow section-raised-top-border relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-6 py-32"
       aria-label="Contact"
     >
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(110,142,251,0.14)_0%,transparent_55%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(14,165,233,0.14)_0%,transparent_55%)]" />
 
       <p className="font-mono text-[11px] uppercase tracking-[0.35em]"><span className="accent-label">Let&apos;s build</span></p>
       <h2

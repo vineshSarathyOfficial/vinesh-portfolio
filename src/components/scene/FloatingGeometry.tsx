@@ -17,8 +17,8 @@ const LAYERS = [
     size: [2.2, 0.11, 1.45] as [number, number, number],
     position: [0, 0.42, 0] as [number, number, number],
     rotation: [0.18, 0.32, 0.04] as [number, number, number],
-    color: "#dbeafe",
-    emissive: "#4f8cff",
+    color: "#d1fae5",
+    emissive: "#10b981",
     emissiveIntensity: 0.15,
     metalness: 0.9,
     roughness: 0.15,
@@ -28,8 +28,8 @@ const LAYERS = [
     size: [1.95, 0.09, 1.25] as [number, number, number],
     position: [0.12, 0, -0.08] as [number, number, number],
     rotation: [0.1, -0.22, -0.03] as [number, number, number],
-    color: "#ede9fe",
-    emissive: "#a855f7",
+    color: "#a7f3d0",
+    emissive: "#34d399",
     emissiveIntensity: 0.12,
     metalness: 0.88,
     roughness: 0.18,
@@ -48,7 +48,7 @@ const LAYERS = [
   },
 ];
 
-const PARTICLE_COLORS = ["#4f8cff", "#a855f7", "#22d3ee", "#f472b6"];
+const PARTICLE_COLORS = ["#10b981", "#34d399", "#22d3ee", "#2dd4bf"];
 
 export function FloatingGeometry({
   scrollProgress = 0,
@@ -83,8 +83,8 @@ export function FloatingGeometry({
     <>
       <ambientLight intensity={isMobile ? 0.5 : 0.45} />
       <directionalLight position={[5, 7, 4]} intensity={isMobile ? 1.2 : 1.5} color="#ffffff" />
-      <directionalLight position={[-3, 2, 2]} intensity={0.45} color="#4f8cff" />
-      <pointLight position={[3, -1, 5]} intensity={isMobile ? 0.35 : 0.55} color="#a855f7" />
+      <directionalLight position={[-3, 2, 2]} intensity={0.45} color="#34d399" />
+      <pointLight position={[3, -1, 5]} intensity={isMobile ? 0.35 : 0.55} color="#10b981" />
       {!isMobile && <pointLight position={[-4, 1, 3]} intensity={0.35} color="#22d3ee" />}
 
       <group ref={groupRef}>
@@ -120,8 +120,8 @@ export function FloatingGeometry({
             <mesh rotation={[Math.PI / 2.15, 0, 0]}>
               <torusGeometry args={[2.35, 0.014, 10, 72]} />
               <meshStandardMaterial
-                color="#7c5cfc"
-                emissive="#a855f7"
+                color="#34d399"
+                emissive="#10b981"
                 emissiveIntensity={0.25}
                 metalness={0.9}
                 roughness={0.2}
