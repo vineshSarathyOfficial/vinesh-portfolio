@@ -3,23 +3,19 @@ import { clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: "primary" | "secondary" | "primary-sm" | "ghost-sm" | "icon-circular" | "ghost";
+  variant?: "primary" | "secondary" | "ghost" | "icon-circular";
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant = "primary", ...props }, ref) => {
-    
-    // Base classes
-    const baseClasses = "inline-flex items-center justify-center font-sans font-medium transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-link disabled:pointer-events-none disabled:opacity-50 select-none cursor-pointer";
-    
-    // Variant classes mapping directly to design.md tokens
+
+    const baseClasses = "inline-flex items-center justify-center font-sans font-medium transition-all duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-cyan disabled:pointer-events-none disabled:opacity-50 select-none cursor-pointer";
+
     const variantClasses = {
-      primary: "bg-ink text-canvas-elevated rounded-pill text-base px-6 h-[44px] hover:bg-ink/90 active:scale-[0.98]",
-      secondary: "bg-canvas-elevated text-ink border border-hairline rounded-pill text-base px-6 h-[44px] hover:bg-hairline-soft active:scale-[0.98]",
-      "primary-sm": "bg-ink text-canvas-elevated rounded-sm text-sm px-3 h-[32px] hover:bg-ink/90 active:scale-[0.98]",
-      "ghost-sm": "bg-canvas-elevated text-ink border border-hairline rounded-sm text-sm px-3 h-[32px] hover:bg-hairline-soft active:scale-[0.98]",
-      "icon-circular": "bg-canvas-elevated text-ink border border-hairline rounded-full w-10 h-10 hover:bg-hairline-soft active:scale-[0.95]",
-      ghost: "bg-transparent text-body hover:bg-hairline-soft hover:text-ink rounded-full px-3 h-8 text-sm",
+      primary: "bg-accent-cyan/10 text-accent-cyan border border-accent-cyan/30 rounded-full text-base px-6 h-[44px] hover:bg-accent-cyan/20 hover:border-accent-cyan/60 hover:shadow-[0_0_20px_rgba(0,255,255,0.15)] active:scale-[0.98]",
+      secondary: "glass text-ink rounded-full text-base px-6 h-[44px] hover:text-accent-gold hover:shadow-[0_0_20px_rgba(212,175,55,0.1)] active:scale-[0.98]",
+      ghost: "bg-transparent text-body hover:text-ink hover:bg-white/5 rounded-full px-3 h-8 text-sm",
+      "icon-circular": "glass text-mute border border-hairline rounded-full w-10 h-10 hover:text-accent-cyan hover:border-accent-cyan/30 active:scale-[0.95]",
     };
 
     return (
