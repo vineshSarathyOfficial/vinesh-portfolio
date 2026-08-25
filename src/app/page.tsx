@@ -1,18 +1,17 @@
-import React from "react";
 import { Hero } from "@/components/hero/Hero";
-import { Projects } from "@/components/projects/Projects";
+import { FeaturedWork } from "@/components/featured/FeaturedWork";
 import { Experience } from "@/components/experience/Experience";
-import { Skills } from "@/components/skills/Skills";
 import { About } from "@/components/about/About";
+import { Contact } from "@/components/contact/Contact";
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <Projects />
+      <FeaturedWork />
       <Experience />
-      <Skills />
       <About />
+      <Contact />
     </>
   );
 }
