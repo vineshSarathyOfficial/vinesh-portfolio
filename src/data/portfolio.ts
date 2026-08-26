@@ -215,7 +215,7 @@ export const experiences: Experience[] = [
     ],
   },
   {
-    company: "Freelance",
+    company: "Software Consultant",
     role: "Frontend Developer",
     period: "February 2019 – June 2020",
     focus: [
@@ -304,7 +304,7 @@ export const philosophies: Philosophy[] = [
 ];
 
 export const currentFocus = {
-  learning: ["Data Structures & Algorithms", "System Design"],
-  building: ["FinPulse (AI Copilot & Gmail Sync Live)"],
+  learning: ["AI Ops", "AI Trading Bots"],
+  building: ["OhMyBot (AI Trading Bot)"],
   exploring: ["Conversational GenAI Architectures", "Full-Stack Next.js 16"],
 };
